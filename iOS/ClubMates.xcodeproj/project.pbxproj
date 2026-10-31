@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		F6C090572FC483BC00B1B52B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFEC36202FB43AA20057B972 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFEC36272FB43AA20057B972;
+			remoteInfo = ClubMates;
+		};
+		F6C090642FC484B000B1B52B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFEC36202FB43AA20057B972 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFEC36272FB43AA20057B972;
+			remoteInfo = ClubMates;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CFEC36282FB43AA20057B972 /* ClubMates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClubMates.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6C090512FC483BC00B1B52B /* ClubMatesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClubMatesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6C090602FC484B000B1B52B /* ClubMatesUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClubMatesUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CFEC362A2FB43AA20057B972 /* ClubMates */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ClubMates;
+			sourceTree = "<group>";
+		};
+		F6C090522FC483BC00B1B52B /* ClubMatesUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ClubMatesUITests;
+			sourceTree = "<group>";
+		};
+		F6C090612FC484B000B1B52B /* ClubMatesUnitTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ClubMatesUnitTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFEC36252FB43AA20057B972 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6C0904E2FC483BC00B1B52B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6C0905D2FC484B000B1B52B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CFEC361F2FB43AA20057B972 = {
+			isa = PBXGroup;
+			children = (
+				CFEC362A2FB43AA20057B972 /* ClubMates */,
+				F6C090522FC483BC00B1B52B /* ClubMatesUITests */,
+				F6C090612FC484B000B1B52B /* ClubMatesUnitTests */,
+				CFEC36292FB43AA20057B972 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CFEC36292FB43AA20057B972 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFEC36282FB43AA20057B972 /* ClubMates.app */,
+				F6C090512FC483BC00B1B52B /* ClubMatesUITests.xctest */,
+				F6C090602FC484B000B1B52B /* ClubMatesUnitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFEC36272FB43AA20057B972 /* ClubMates */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFEC36382FB43AA30057B972 /* Build configuration list for PBXNativeTarget "ClubMates" */;
+			buildPhases = (
+				CFEC36242FB43AA20057B972 /* Sources */,
+				CFEC36252FB43AA20057B972 /* Frameworks */,
+				CFEC36262FB43AA20057B972 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CFEC362A2FB43AA20057B972 /* ClubMates */,
+			);
+			name = ClubMates;
+			packageProductDependencies = (
+			);
+			productName = ClubMates;
+			productReference = CFEC36282FB43AA20057B972 /* ClubMates.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F6C090502FC483BC00B1B52B /* ClubMatesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6C0905B2FC483BC00B1B52B /* Build configuration list for PBXNativeTarget "ClubMatesUITests" */;
+			buildPhases = (
+				F6C0904D2FC483BC00B1B52B /* Sources */,
+				F6C0904E2FC483BC00B1B52B /* Frameworks */,
+				F6C0904F2FC483BC00B1B52B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6C090582FC483BC00B1B52B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F6C090522FC483BC00B1B52B /* ClubMatesUITests */,
+			);
+			name = ClubMatesUITests;
+			packageProductDependencies = (
+			);
+			productName = ClubMatesUITests;
+			productReference = F6C090512FC483BC00B1B52B /* ClubMatesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		F6C0905F2FC484B000B1B52B /* ClubMatesUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6C090662FC484B000B1B52B /* Build configuration list for PBXNativeTarget "ClubMatesUnitTests" */;
+			buildPhases = (
+				F6C0905C2FC484B000B1B52B /* Sources */,
+				F6C0905D2FC484B000B1B52B /* Frameworks */,
+				F6C0905E2FC484B000B1B52B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6C090652FC484B000B1B52B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F6C090612FC484B000B1B52B /* ClubMatesUnitTests */,
+			);
+			name = ClubMatesUnitTests;
+			packageProductDependencies = (
+			);
+			productName = ClubMatesUnitTests;
+			productReference = F6C090602FC484B000B1B52B /* ClubMatesUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFEC36202FB43AA20057B972 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					CFEC36272FB43AA20057B972 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					F6C090502FC483BC00B1B52B = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = CFEC36272FB43AA20057B972;
+					};
+					F6C0905F2FC484B000B1B52B = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = CFEC36272FB43AA20057B972;
+					};
+				};
+			};
+			buildConfigurationList = CFEC36232FB43AA20057B972 /* Build configuration list for PBXProject "ClubMates" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFEC361F2FB43AA20057B972;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CFEC36292FB43AA20057B972 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFEC36272FB43AA20057B972 /* ClubMates */,
+				F6C090502FC483BC00B1B52B /* ClubMatesUITests */,
+				F6C0905F2FC484B000B1B52B /* ClubMatesUnitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFEC36262FB43AA20057B972 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6C0904F2FC483BC00B1B52B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6C0905E2FC484B000B1B52B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFEC36242FB43AA20057B972 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6C0904D2FC483BC00B1B52B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6C0905C2FC484B000B1B52B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F6C090582FC483BC00B1B52B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFEC36272FB43AA20057B972 /* ClubMates */;
+			targetProxy = F6C090572FC483BC00B1B52B /* PBXContainerItemProxy */;
+		};
+		F6C090652FC484B000B1B52B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFEC36272FB43AA20057B972 /* ClubMates */;
+			targetProxy = F6C090642FC484B000B1B52B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CFEC36362FB43AA30057B972 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CFEC36372FB43AA30057B972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFEC36392FB43AA30057B972 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ClubMates/Preview Content\"";
+				DEVELOPMENT_TEAM = ZFV6TDDM8J;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "ClubMates needs camera access to record your selfie verification video.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ClubMates uses your location to verify you are at a venue before check-in.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "ClubMates needs microphone access to record your selfie verification video.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Using To Save Selfie";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rakesh.ClubMates;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CFEC363A2FB43AA30057B972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ClubMates/Preview Content\"";
+				DEVELOPMENT_TEAM = ZFV6TDDM8J;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "ClubMates needs camera access to record your selfie verification video.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ClubMates uses your location to verify you are at a venue before check-in.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "ClubMates needs microphone access to record your selfie verification video.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Using To Save Selfie";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rakesh.ClubMates;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F6C090592FC483BC00B1B52B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pavan.ClubMatesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ClubMates;
+			};
+			name = Debug;
+		};
+		F6C0905A2FC483BC00B1B52B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pavan.ClubMatesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ClubMates;
+			};
+			name = Release;
+		};
+		F6C090672FC484B000B1B52B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pavan.ClubMatesUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClubMates.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClubMates";
+			};
+			name = Debug;
+		};
+		F6C090682FC484B000B1B52B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pavan.ClubMatesUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClubMates.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClubMates";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFEC36232FB43AA20057B972 /* Build configuration list for PBXProject "ClubMates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFEC36362FB43AA30057B972 /* Debug */,
+				CFEC36372FB43AA30057B972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFEC36382FB43AA30057B972 /* Build configuration list for PBXNativeTarget "ClubMates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFEC36392FB43AA30057B972 /* Debug */,
+				CFEC363A2FB43AA30057B972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6C0905B2FC483BC00B1B52B /* Build configuration list for PBXNativeTarget "ClubMatesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6C090592FC483BC00B1B52B /* Debug */,
+				F6C0905A2FC483BC00B1B52B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6C090662FC484B000B1B52B /* Build configuration list for PBXNativeTarget "ClubMatesUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6C090672FC484B000B1B52B /* Debug */,
+				F6C090682FC484B000B1B52B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFEC36202FB43AA20057B972 /* Project object */;
+}

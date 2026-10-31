@@ -1,0 +1,104 @@
+name: Deploy QA Backend
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Backend/**"
+      - "!Backend/**/*.md"
+      - "docker-compose.qa.yml"
+      - ".github/workflows/deploy-backend.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: qa-backend
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy QA Backend To Droplet
+    runs-on: ubuntu-latest
+    environment: QA
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: Backend/package-lock.json
+
+      - name: Verify backend
+        working-directory: Backend
+        run: |
+          npm ci
+          npm run build
+          npm test
+
+      - name: Configure SSH
+        env:
+          DROPLET_HOST: ${{ vars.DROPLET_HOST }}
+          DROPLET_SSH_KEY: ${{ secrets.DROPLET_SSH_KEY }}
+        run: |
+          test -n "$DROPLET_HOST"
+          test -n "$DROPLET_SSH_KEY"
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DROPLET_SSH_KEY" > ~/.ssh/clubmates_do
+          chmod 600 ~/.ssh/clubmates_do
+          ssh-keyscan -H "$DROPLET_HOST" >> ~/.ssh/known_hosts
+
+      - name: Upload Docker deployment files
+        env:
+          DROPLET_HOST: ${{ vars.DROPLET_HOST }}
+          DROPLET_USER: ${{ vars.DROPLET_USER }}
+        run: |
+          test -n "$DROPLET_HOST"
+          test -n "$DROPLET_USER"
+          ssh -i ~/.ssh/clubmates_do -o IdentitiesOnly=yes "$DROPLET_USER@$DROPLET_HOST" \
+            'mkdir -p /opt/clubmates/Backend'
+          rsync -az --delete \
+            --exclude 'node_modules' \
+            --exclude 'dist' \
+            --exclude 'coverage' \
+            --exclude '.env' \
+            --exclude '.env.*' \
+            --exclude '.DS_Store' \
+            --exclude '.venv-face' \
+            --exclude '.deepface-home' \
+            --exclude '.pytest_cache' \
+            --exclude '__pycache__' \
+            --exclude '*.md' \
+            -e "ssh -i ~/.ssh/clubmates_do -o IdentitiesOnly=yes" \
+            Backend/ "$DROPLET_USER@$DROPLET_HOST:/opt/clubmates/Backend/"
+          rsync -az \
+            -e "ssh -i ~/.ssh/clubmates_do -o IdentitiesOnly=yes" \
+            docker-compose.qa.yml "$DROPLET_USER@$DROPLET_HOST:/opt/clubmates/docker-compose.qa.yml"
+
+      - name: Deploy Docker backend
+        env:
+          DROPLET_HOST: ${{ vars.DROPLET_HOST }}
+          DROPLET_USER: ${{ vars.DROPLET_USER }}
+        run: |
+          ssh -i ~/.ssh/clubmates_do -o IdentitiesOnly=yes "$DROPLET_USER@$DROPLET_HOST" 'bash -s' <<'REMOTE'
+          set -euo pipefail
+          cd /opt/clubmates
+          test -f Backend/.env
+          mkdir -p Backend/.deepface-home
+          docker compose -f docker-compose.qa.yml build backend
+          docker compose -f docker-compose.qa.yml up -d backend
+          printf '%s\n' '${{ github.sha }}' > DEPLOYED_COMMIT
+          for attempt in {1..40}; do
+            if curl -fsS http://127.0.0.1:3001/health; then
+              exit 0
+            fi
+            sleep 2
+          done
+          docker compose -f docker-compose.qa.yml ps
+          docker compose -f docker-compose.qa.yml logs --tail=120 backend
+          exit 1
+          REMOTE

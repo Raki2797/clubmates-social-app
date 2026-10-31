@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: clubmates-backend
+    runtime: docker
+    rootDir: Backend
+    dockerfilePath: Backend/Dockerfile
+    dockerContext: Backend
+    plan: starter
+    region: oregon
+    healthCheckPath: /health
+    disk:
+      name: deepface-cache
+      mountPath: /app/.deepface-home
+      sizeGB: 1
+    envVars:
+      - key: FACE_VERIFICATION_PYTHON_BIN
+        value: /app/.venv-face/bin/python
+      - key: FACE_VERIFICATION_SCRIPT_PATH
+        value: /app/scripts/compare_faces.py
+      - key: FACE_VERIFICATION_DEEPFACE_HOME
+        value: /app/.deepface-home

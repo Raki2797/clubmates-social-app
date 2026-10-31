@@ -1,0 +1,41 @@
+# Xcode
+*.xcuserstate
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+.derivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Build
+build/
+*.o
+*.d
+dist/
+coverage/
+
+# Packages
+.build/
+.swiftpm/
+node_modules/
+
+# macOS
+.DS_Store
+
+# Environment
+.env
+.env.*
+!.env.example
+!**/.env.example
+
+# Local tool state
+.claude/
+.postman/
+postman/
+
+# Backend local face verification runtime
+Backend/.venv-face/
+Backend/.deepface-home/

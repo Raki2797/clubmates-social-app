@@ -1,0 +1,100 @@
+ALTER TABLE venues
+  ADD COLUMN IF NOT EXISTS city TEXT NOT NULL DEFAULT 'Hyderabad',
+  ADD COLUMN IF NOT EXISTS latitude DOUBLE PRECISION,
+  ADD COLUMN IF NOT EXISTS longitude DOUBLE PRECISION,
+  ADD COLUMN IF NOT EXISTS checkin_radius_meters INTEGER NOT NULL DEFAULT 200;
+
+WITH venue_seed (name, neighborhood, vibe, music, symbol_name, gradient_hex, latitude, longitude, checkin_radius_meters) AS (
+  VALUES
+    ('10 Downing Street', 'Jubilee Hills', 'Classic pub energy', 'Bollywood / House', 'music.note.house.fill', ARRAY['7C3AED', 'EC4899'], 17.4349, 78.3996, 200),
+    ('Amnesia Lounge Bar', 'Jubilee Hills', 'High-energy lounge crowd', 'EDM / Bollywood', 'sparkles', ARRAY['2563EB', '06B6D4'], 17.4338, 78.4017, 200),
+    ('Carpe Diem', 'Jubilee Hills', 'Late-night club scene', 'House / Pop', 'moon.stars.fill', ARRAY['0F766E', '22C55E'], 17.4332, 78.4025, 200),
+    ('Club Rogue', 'Jubilee Hills', 'Dance floor focused', 'EDM / Hip-hop', 'bolt.fill', ARRAY['DC2626', 'F97316'], 17.4336, 78.4020, 200),
+    ('Club N', 'Jubilee Hills', 'Premium nightlife crowd', 'Bollywood / EDM', 'n.circle.fill', ARRAY['9333EA', 'DB2777'], 17.4335, 78.4018, 200),
+    ('Club Rogue Gachibowli', 'Gachibowli', 'Weekend party crowd', 'EDM / Bollywood', 'bolt.circle.fill', ARRAY['0891B2', '4F46E5'], 17.4415, 78.3488, 200),
+    ('TOS Club & Lounge', 'Banjara Hills', 'Club and lounge mix', 'Bollywood / Commercial', 'music.mic', ARRAY['BE123C', 'F59E0B'], 17.4245, 78.4482, 200),
+    ('Blue Block Club', 'Jubilee Hills', 'Neon club atmosphere', 'House / EDM', 'square.grid.2x2.fill', ARRAY['1D4ED8', '38BDF8'], 17.4177, 78.4138, 200),
+    ('Air Live Jubilee Hills', 'Jubilee Hills', 'Live music nights', 'Live / Bollywood', 'music.quarternote.3', ARRAY['16A34A', '84CC16'], 17.4334, 78.4022, 200),
+    ('Fat Pigeon', 'Jubilee Hills', 'Rooftop bar energy', 'Commercial / House', 'bird.fill', ARRAY['EA580C', 'FACC15'], 17.4288, 78.4098, 200),
+    ('ILLUZION CLUB & KITCHEN', 'Jubilee Hills', 'Club and kitchen vibe', 'EDM / Bollywood', 'wand.and.stars', ARRAY['7E22CE', 'F472B6'], 17.4329, 78.4044, 200),
+    ('Rock Club Sky Lounge', 'Banjara Hills', 'Sky lounge crowd', 'Rock / Commercial', 'guitars.fill', ARRAY['334155', 'E11D48'], 17.4219, 78.4381, 200),
+    ('Fly Feel The High', 'Jubilee Hills', 'High-energy party spot', 'EDM / House', 'paperplane.fill', ARRAY['0EA5E9', 'A855F7'], 17.4178, 78.4137, 200),
+    ('Big Bull Club', 'Financial District', 'Large-format club nights', 'Bollywood / EDM', 'flame.fill', ARRAY['B91C1C', 'F97316'], 17.4146, 78.3432, 200),
+    ('Prism Club & Kitchen', 'Gachibowli', 'Big room club energy', 'EDM / Bollywood', 'prism.fill', ARRAY['4F46E5', 'EC4899'], 17.4400, 78.3545, 200),
+    ('Kismet', 'Somajiguda', 'Upscale hotel lounge', 'Commercial / Pop', 'sparkle.magnifyingglass', ARRAY['92400E', 'F59E0B'], 17.4239, 78.4621, 200),
+    ('Zero40 Brewing', 'Madhapur', 'Brewpub social crowd', 'Pop / Commercial', 'mug.fill', ARRAY['0F766E', '14B8A6'], 17.4437, 78.3770, 200),
+    ('Prost Brew Pub', 'Jubilee Hills', 'Brewpub nightlife', 'Pop / House', 'wineglass.fill', ARRAY['854D0E', 'FACC15'], 17.4307, 78.4072, 200),
+    ('Hard Rock Cafe Hyderabad', 'HITEC City', 'Live music and classics', 'Rock / Pop', 'guitars.fill', ARRAY['111827', 'DC2626'], 17.4468, 78.3565, 200),
+    ('The Moonshine Project', 'Jubilee Hills', 'Live gig crowd', 'Live / Indie', 'moon.fill', ARRAY['4338CA', '06B6D4'], 17.4320, 78.4075, 200),
+    ('Tabula Rasa', 'Jubilee Hills', 'Open-air social nights', 'Commercial / House', 'tablecells.fill', ARRAY['15803D', '22C55E'], 17.4275, 78.4082, 200),
+    ('Over The Moon', 'Jubilee Hills', 'Rooftop lounge vibe', 'Pop / House', 'moon.stars.fill', ARRAY['1E3A8A', 'A855F7'], 17.4260, 78.4096, 200),
+    ('Lord Of The Drinks Hyderabad', 'Jubilee Hills', 'Cocktail lounge crowd', 'Bollywood / Commercial', 'crown.fill', ARRAY['6D28D9', 'F59E0B'], 17.4352, 78.4010, 200),
+    ('Heart Cup Coffee Kondapur', 'Kondapur', 'Cafe-bar social scene', 'Live / Pop', 'heart.fill', ARRAY['BE185D', 'FB7185'], 17.4571, 78.3685, 200),
+    ('Heart Cup Coffee Jubilee Hills', 'Jubilee Hills', 'Cafe-bar live nights', 'Live / Pop', 'heart.circle.fill', ARRAY['DB2777', 'F97316'], 17.4353, 78.4015, 200),
+    ('Ironhill Hyderabad', 'HITEC City', 'Brewery and big groups', 'Commercial / Pop', 'building.2.fill', ARRAY['374151', 'D97706'], 17.4472, 78.3568, 200),
+    ('Repete Brewery & Kitchen', 'Jubilee Hills', 'Brewery dinner crowd', 'Pop / Commercial', 'repeat.circle.fill', ARRAY['047857', '10B981'], 17.4327, 78.4078, 200),
+    ('Broadway Brewery', 'Gachibowli', 'Brewery party nights', 'House / Pop', 'theatermasks.fill', ARRAY['7C2D12', 'EA580C'], 17.4455, 78.3490, 200),
+    ('Zythum Brewing Co', 'Gachibowli', 'Craft beer crowd', 'Commercial / Pop', 'mug.fill', ARRAY['065F46', '84CC16'], 17.4460, 78.3502, 200),
+    ('Xora Bar & Kitchen', 'Jubilee Hills', 'Bar and kitchen nightlife', 'Bollywood / Pop', 'xmark.circle.fill', ARRAY['581C87', 'D946EF'], 17.4188, 78.4102, 200),
+    ('Komma The Club', 'Jubilee Hills', 'Club night crowd', 'EDM / Bollywood', 'k.circle.fill', ARRAY['BE123C', 'F43F5E'], 17.4224, 78.4131, 200),
+    ('TOT - The Olive Terrace', 'Jubilee Hills', 'Terrace lounge crowd', 'Commercial / House', 'leaf.fill', ARRAY['3F6212', 'A3E635'], 17.4248, 78.4140, 200),
+    ('Mamalola Penthouse', 'Jubilee Hills', 'Penthouse party vibe', 'Latin / Commercial', 'building.columns.fill', ARRAY['C2410C', 'F97316'], 17.4210, 78.4125, 200),
+    ('Aqua', 'Banjara Hills', 'Poolside lounge energy', 'House / Pop', 'drop.fill', ARRAY['0369A1', '22D3EE'], 17.4150, 78.4260, 200)
+)
+INSERT INTO venues (name, neighborhood, vibe, music, symbol_name, gradient_hex, latitude, longitude, checkin_radius_meters)
+SELECT name, neighborhood, vibe, music, symbol_name, gradient_hex, latitude, longitude, checkin_radius_meters
+FROM venue_seed seed
+WHERE NOT EXISTS (
+  SELECT 1
+  FROM venues v
+  WHERE v.name = seed.name
+);
+
+WITH venue_seed (name, neighborhood, vibe, music, symbol_name, gradient_hex, latitude, longitude, checkin_radius_meters) AS (
+  VALUES
+    ('10 Downing Street', 'Jubilee Hills', 'Classic pub energy', 'Bollywood / House', 'music.note.house.fill', ARRAY['7C3AED', 'EC4899'], 17.4349, 78.3996, 200),
+    ('Amnesia Lounge Bar', 'Jubilee Hills', 'High-energy lounge crowd', 'EDM / Bollywood', 'sparkles', ARRAY['2563EB', '06B6D4'], 17.4338, 78.4017, 200),
+    ('Carpe Diem', 'Jubilee Hills', 'Late-night club scene', 'House / Pop', 'moon.stars.fill', ARRAY['0F766E', '22C55E'], 17.4332, 78.4025, 200),
+    ('Club Rogue', 'Jubilee Hills', 'Dance floor focused', 'EDM / Hip-hop', 'bolt.fill', ARRAY['DC2626', 'F97316'], 17.4336, 78.4020, 200),
+    ('Club N', 'Jubilee Hills', 'Premium nightlife crowd', 'Bollywood / EDM', 'n.circle.fill', ARRAY['9333EA', 'DB2777'], 17.4335, 78.4018, 200),
+    ('Club Rogue Gachibowli', 'Gachibowli', 'Weekend party crowd', 'EDM / Bollywood', 'bolt.circle.fill', ARRAY['0891B2', '4F46E5'], 17.4415, 78.3488, 200),
+    ('TOS Club & Lounge', 'Banjara Hills', 'Club and lounge mix', 'Bollywood / Commercial', 'music.mic', ARRAY['BE123C', 'F59E0B'], 17.4245, 78.4482, 200),
+    ('Blue Block Club', 'Jubilee Hills', 'Neon club atmosphere', 'House / EDM', 'square.grid.2x2.fill', ARRAY['1D4ED8', '38BDF8'], 17.4177, 78.4138, 200),
+    ('Air Live Jubilee Hills', 'Jubilee Hills', 'Live music nights', 'Live / Bollywood', 'music.quarternote.3', ARRAY['16A34A', '84CC16'], 17.4334, 78.4022, 200),
+    ('Fat Pigeon', 'Jubilee Hills', 'Rooftop bar energy', 'Commercial / House', 'bird.fill', ARRAY['EA580C', 'FACC15'], 17.4288, 78.4098, 200),
+    ('ILLUZION CLUB & KITCHEN', 'Jubilee Hills', 'Club and kitchen vibe', 'EDM / Bollywood', 'wand.and.stars', ARRAY['7E22CE', 'F472B6'], 17.4329, 78.4044, 200),
+    ('Rock Club Sky Lounge', 'Banjara Hills', 'Sky lounge crowd', 'Rock / Commercial', 'guitars.fill', ARRAY['334155', 'E11D48'], 17.4219, 78.4381, 200),
+    ('Fly Feel The High', 'Jubilee Hills', 'High-energy party spot', 'EDM / House', 'paperplane.fill', ARRAY['0EA5E9', 'A855F7'], 17.4178, 78.4137, 200),
+    ('Big Bull Club', 'Financial District', 'Large-format club nights', 'Bollywood / EDM', 'flame.fill', ARRAY['B91C1C', 'F97316'], 17.4146, 78.3432, 200),
+    ('Prism Club & Kitchen', 'Gachibowli', 'Big room club energy', 'EDM / Bollywood', 'prism.fill', ARRAY['4F46E5', 'EC4899'], 17.4400, 78.3545, 200),
+    ('Kismet', 'Somajiguda', 'Upscale hotel lounge', 'Commercial / Pop', 'sparkle.magnifyingglass', ARRAY['92400E', 'F59E0B'], 17.4239, 78.4621, 200),
+    ('Zero40 Brewing', 'Madhapur', 'Brewpub social crowd', 'Pop / Commercial', 'mug.fill', ARRAY['0F766E', '14B8A6'], 17.4437, 78.3770, 200),
+    ('Prost Brew Pub', 'Jubilee Hills', 'Brewpub nightlife', 'Pop / House', 'wineglass.fill', ARRAY['854D0E', 'FACC15'], 17.4307, 78.4072, 200),
+    ('Hard Rock Cafe Hyderabad', 'HITEC City', 'Live music and classics', 'Rock / Pop', 'guitars.fill', ARRAY['111827', 'DC2626'], 17.4468, 78.3565, 200),
+    ('The Moonshine Project', 'Jubilee Hills', 'Live gig crowd', 'Live / Indie', 'moon.fill', ARRAY['4338CA', '06B6D4'], 17.4320, 78.4075, 200),
+    ('Tabula Rasa', 'Jubilee Hills', 'Open-air social nights', 'Commercial / House', 'tablecells.fill', ARRAY['15803D', '22C55E'], 17.4275, 78.4082, 200),
+    ('Over The Moon', 'Jubilee Hills', 'Rooftop lounge vibe', 'Pop / House', 'moon.stars.fill', ARRAY['1E3A8A', 'A855F7'], 17.4260, 78.4096, 200),
+    ('Lord Of The Drinks Hyderabad', 'Jubilee Hills', 'Cocktail lounge crowd', 'Bollywood / Commercial', 'crown.fill', ARRAY['6D28D9', 'F59E0B'], 17.4352, 78.4010, 200),
+    ('Heart Cup Coffee Kondapur', 'Kondapur', 'Cafe-bar social scene', 'Live / Pop', 'heart.fill', ARRAY['BE185D', 'FB7185'], 17.4571, 78.3685, 200),
+    ('Heart Cup Coffee Jubilee Hills', 'Jubilee Hills', 'Cafe-bar live nights', 'Live / Pop', 'heart.circle.fill', ARRAY['DB2777', 'F97316'], 17.4353, 78.4015, 200),
+    ('Ironhill Hyderabad', 'HITEC City', 'Brewery and big groups', 'Commercial / Pop', 'building.2.fill', ARRAY['374151', 'D97706'], 17.4472, 78.3568, 200),
+    ('Repete Brewery & Kitchen', 'Jubilee Hills', 'Brewery dinner crowd', 'Pop / Commercial', 'repeat.circle.fill', ARRAY['047857', '10B981'], 17.4327, 78.4078, 200),
+    ('Broadway Brewery', 'Gachibowli', 'Brewery party nights', 'House / Pop', 'theatermasks.fill', ARRAY['7C2D12', 'EA580C'], 17.4455, 78.3490, 200),
+    ('Zythum Brewing Co', 'Gachibowli', 'Craft beer crowd', 'Commercial / Pop', 'mug.fill', ARRAY['065F46', '84CC16'], 17.4460, 78.3502, 200),
+    ('Xora Bar & Kitchen', 'Jubilee Hills', 'Bar and kitchen nightlife', 'Bollywood / Pop', 'xmark.circle.fill', ARRAY['581C87', 'D946EF'], 17.4188, 78.4102, 200),
+    ('Komma The Club', 'Jubilee Hills', 'Club night crowd', 'EDM / Bollywood', 'k.circle.fill', ARRAY['BE123C', 'F43F5E'], 17.4224, 78.4131, 200),
+    ('TOT - The Olive Terrace', 'Jubilee Hills', 'Terrace lounge crowd', 'Commercial / House', 'leaf.fill', ARRAY['3F6212', 'A3E635'], 17.4248, 78.4140, 200),
+    ('Mamalola Penthouse', 'Jubilee Hills', 'Penthouse party vibe', 'Latin / Commercial', 'building.columns.fill', ARRAY['C2410C', 'F97316'], 17.4210, 78.4125, 200),
+    ('Aqua', 'Banjara Hills', 'Poolside lounge energy', 'House / Pop', 'drop.fill', ARRAY['0369A1', '22D3EE'], 17.4150, 78.4260, 200)
+)
+UPDATE venues v
+SET neighborhood = seed.neighborhood,
+    vibe = seed.vibe,
+    music = seed.music,
+    symbol_name = seed.symbol_name,
+    gradient_hex = seed.gradient_hex,
+    latitude = seed.latitude,
+    longitude = seed.longitude,
+    checkin_radius_meters = seed.checkin_radius_meters
+FROM venue_seed seed
+WHERE v.name = seed.name;

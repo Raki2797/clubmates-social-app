@@ -1,0 +1,5 @@
+-keep class com.clubmates.app.data.network.** { *; }
+-keep class com.clubmates.app.domain.model.** { *; }
+-keepattributes *Annotation*
+-dontwarn okhttp3.**
+-dontwarn retrofit2.**

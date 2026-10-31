@@ -1,0 +1,9 @@
+ALTER TABLE users
+  ADD COLUMN IF NOT EXISTS notif_enabled        BOOLEAN NOT NULL DEFAULT true,
+  ADD COLUMN IF NOT EXISTS notif_new_match      BOOLEAN NOT NULL DEFAULT true,
+  ADD COLUMN IF NOT EXISTS notif_new_message    BOOLEAN NOT NULL DEFAULT true,
+  ADD COLUMN IF NOT EXISTS notif_liked_you      BOOLEAN NOT NULL DEFAULT true,
+  ADD COLUMN IF NOT EXISTS notif_super_like     BOOLEAN NOT NULL DEFAULT true,
+  ADD COLUMN IF NOT EXISTS notif_venue_activity BOOLEAN NOT NULL DEFAULT true;
+
+INSERT INTO schema_migrations(version) VALUES ('013') ON CONFLICT DO NOTHING;
